@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 64px);
+    background-color: #a9a9a914;
+}
+
+.mat-mdc-card-header {
+    justify-content: center;
+}
+
+
+.main-mat-card {
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+}
+
+.filter-field {
+    margin: 5px;
+}
+
+.weather-display{
+    display: flex;
+    cursor: pointer;
+}
+
+.weather-display-small{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weather-card-small{
+    margin: 4px 8px;
+    width: 150px;
+}
+
+.weather-card{
+    margin: 0px 8px;
+    width: 230px;
+}
+
+.divider{
+    margin: 8px 0px;
+}
+
+.text-we{
+    padding-top:8px;
+}
+.weather-per-day{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    .temp {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+.daily-weather-content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// mat-card-content {
+//     display: flex;
+//     flex-direction: row;
+//     height: 100%;
+//     padding: 0px !important;
+// }
+

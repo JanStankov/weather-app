@@ -1,0 +1,46 @@
+<mat-card>
+    <mat-card-content>
+      <div class="split-part-image">
+        <img class="image" src="./../../../assets/images/pngwing.com.png"/>
+      </div>
+      <div class="split-part-login">
+        <form [formGroup]="form" class="row login-form">
+  
+            <h2 class="title">{{this.loginScreen ? 'Login' : 'Register'}} to Weather App</h2>
+
+            <mat-form-field appearance="outline" *ngIf="!this.loginScreen">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="name">
+                <mat-error *ngIf="form.controls.name.invalid">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" *ngIf="!this.loginScreen">
+                <mat-label>Surname</mat-label>
+                <input type="text" matInput formControlName="surname">
+                <mat-error *ngIf="form.controls.surname.invalid">Surname is required</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email">
+              <mat-error *ngIf="form.get('email')?.errors?.required">Email is required</mat-error>
+              <mat-error *ngIf="form.get('email')?.errors?.pattern">Invalid email</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput formControlName="password">
+              <mat-error *ngIf="form.get('email')?.errors?.required">Password is required</mat-error>
+            </mat-form-field>
+  
+            <div class="button">
+              <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="this.loginScreen ? login() : register()">{{this.loginScreen ? 'Login' : 'Register'}}</button>
+            </div>
+            <div class="switch-button">
+                <div (click)="switchScreen()">{{this.loginScreen ? 'Sign Up' : 'Sign In'}}</div>
+            </div>
+        </form>
+      </div>
+  
+    </mat-card-content>
+  </mat-card>

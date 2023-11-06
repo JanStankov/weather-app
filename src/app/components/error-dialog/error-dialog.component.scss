@@ -1,0 +1,22 @@
+.error-message {
+    background: #eee;
+    padding: 1rem;
+    font-family: monospace;
+    word-break: break-all;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectable {
+    cursor: pointer;
+    color: rgb(var(--primary-text-color));
+    padding-right: 48px;
+}
+
+::ng-deep .mdc-dialog__content {
+    padding-top: 0px !important;
+}

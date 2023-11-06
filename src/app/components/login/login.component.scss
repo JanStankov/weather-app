@@ -1,0 +1,89 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
+
+.mat-mdc-form-field {
+    padding: 0px !important;
+}
+
+mat-card {
+    width: 900px;
+    height: 500px;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 0px !important;
+}
+
+.split-part-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    background-color: #3f51b5;
+    width: 50%;
+    height: 100%;
+}
+
+.split-part-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+    .title {
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 24px;
+    }
+}
+
+.login-form {
+    padding: 0 36px;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+}
+
+.error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+}
+
+.button {
+    padding: 20px 0 0 0;
+
+    button {
+        width: 100%;
+    }
+
+
+}
+
+.switch-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+
+    div{
+        cursor: pointer;
+    }
+}

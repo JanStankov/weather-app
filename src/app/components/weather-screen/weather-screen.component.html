@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container">
+    <mat-card class="main-mat-card">
+        <mat-card-content>
+            <div> 
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input type="text" matInput [formControl]="cityControl">
+                </mat-form-field>
+                <button mat-raised-button class="filter-field" color="primary" (click)="search()">Search</button>
+            </div>
+            <span>Results for <b>{{cityName}}</b></span>
+            <mat-divider class="divider"></mat-divider>
+            <div class="weather-display">
+                <mat-card *ngFor="let weather of midDayWeather" class="weather-card" (click)="showDayWeather(weather)">
+                    <mat-card-header>
+                        <mat-card-title>{{weather.dateTime | formatDatePipe}}</mat-card-title>
+                      </mat-card-header>
+                    <mat-card-content>
+                        <div class="daily-weather-content">
+                            <img [src]="'https://openweathermap.org/img/wn/'+ weather.weather[0].icon+'@2x.png'" [alt]="weather.weather[0].main ">
+                            <span>Temperature: {{weather.main.temp.toFixed(0)}}°</span>
+                            <span>Feels Like: {{weather.main.feelsLike.toFixed(0)}}°</span>
+                            <span>Humidity: {{weather.main.humidity}}%</span>
+                            <span>Precipitation: {{(weather.precipitation*100).toFixed(0)}}%</span>
+                            <span>Wind: {{weather.wind.speed}}km/h</span>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="text-we">Weather throughout the day</div>
+            <mat-divider class="divider"></mat-divider>
+            <div class="weather-display-small">
+                <mat-card *ngFor="let weather of weatherListPerDay" class="weather-card-small">
+                    <mat-card-header>
+                        <mat-card-title class="title">{{weather.dateTime.split(' ')[1].slice(0,5)}}</mat-card-title>
+                      </mat-card-header>
+                    <mat-card-content class="weather-per-day">
+                        <img [src]="'https://openweathermap.org/img/wn/'+ weather.weather[0].icon+'@2x.png'" [alt]="weather.weather[0].main ">
+                        <span class="temp">{{weather.main.temp.toFixed(0)}}°</span>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

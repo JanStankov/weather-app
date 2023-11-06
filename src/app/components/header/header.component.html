@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="user-container">
+            <img class="image" src="./../../../assets/images/pngwing.com.png"/>
+            <span class="app-name">Weather App</span>
+        </div>
+        <div class="user-container">
+            <span class="app-name spacing">{{name +' '+ surname}}</span>
+            <button mat-mini-fab color="accent" [matMenuTriggerFor]="menu">
+                <mat-icon>person</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">Log Out</button>
+            </mat-menu>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
