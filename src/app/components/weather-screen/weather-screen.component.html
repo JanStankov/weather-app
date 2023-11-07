@@ -28,7 +28,7 @@
                     </mat-card-content>
                 </mat-card>
             </div>
-            <div class="text-we">Weather throughout the day</div>
+            <div class="text-we">Weather throughout the day - <b>{{this.selectedDay | formatDatePipe}}</b></div>
             <mat-divider class="divider"></mat-divider>
             <div class="weather-display-small">
                 <mat-card *ngFor="let weather of weatherListPerDay" class="weather-card-small">

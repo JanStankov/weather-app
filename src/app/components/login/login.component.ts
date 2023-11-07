@@ -59,6 +59,7 @@ export class LoginComponent {
         email: new FormControl(''),
         password: new FormControl(''),
       });
+      this.form.markAsPristine()
     }
     else{
       this.form = new FormGroup({
@@ -67,6 +68,7 @@ export class LoginComponent {
         email: new FormControl('',[Validators.required, Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i)]),
         password: new FormControl('',[Validators.required]),
       });
+      this.form.markAsPristine()
     }
   }
 }

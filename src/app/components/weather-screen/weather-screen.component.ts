@@ -10,6 +10,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 })
 export class WeatherScreenComponent implements OnInit{
   cityName = 'Skopje';
+  selectedDay = ''
   cityControl = new FormControl('');
 
   weatherList: WeatherCity[] = [];
@@ -29,6 +30,7 @@ export class WeatherScreenComponent implements OnInit{
       this.midDayWeather = [];
       this.midDayWeather.push(res[0])
       this.midDayWeather = [...this.midDayWeather, ...res.filter(x => x.dateTime.includes("15:00:00") && x.dateTime.split(' ')[0] !== res[0].dateTime.split(' ')[0]).slice(0, 4)];
+      this.showDayWeather(this.midDayWeather[0]);
     });
   }
 
@@ -42,7 +44,7 @@ export class WeatherScreenComponent implements OnInit{
         this.midDayWeather.push(res[0])
         this.midDayWeather = [...this.midDayWeather, ...res.filter(x => x.dateTime.includes("15:00:00")
          && x.dateTime.split(' ')[0] !== res[0].dateTime.split(' ')[0]).slice(0, 4)];
-        this.cityName = city;
+        this.cityName = city.charAt(0).toUpperCase() + city.slice(1);
 
         this.showDayWeather(this.midDayWeather[0]);
       }
@@ -52,7 +54,6 @@ export class WeatherScreenComponent implements OnInit{
 
   showDayWeather(weather :WeatherCity){
     this.weatherListPerDay = this.weatherList.filter(x => x.dateTime.includes(weather.dateTime.split(' ')[0]));
-    console.log('this.weatherListPerDay',this.weatherListPerDay);
-    
+    this.selectedDay = weather.dateTime;
   }
 }
